@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details - CloudHost Pro</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white font-['Inter'] transition-colors duration-300" id="body">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-2xl">☁️</span>
+                    </div>
+                    <span class="text-2xl font-bold font-['Space_Grotesk'] bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">CloudHost Pro</span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <!-- Home Dropdown -->
+                    <div class="relative group" id="homeDropdown">
+                        <button class="hover:text-cyan-400 transition-colors flex items-center space-x-1">
+                            <span>Home</span>
+                            <span class="text-sm">▼</span>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 backdrop-blur-xl bg-white/10 border border-white/20 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="index.html" class="block px-4 py-3 hover:bg-white/10 transition-colors rounded-t-lg">Home (Default)</a>
+                            <a href="home2.html" class="block px-4 py-3 hover:bg-white/10 transition-colors rounded-b-lg">Home – Alternate</a>
+                        </div>
+                    </div>
+                    <a href="features-pricing.html" class="hover:text-cyan-400 transition-colors">Features</a>
+                    <a href="about.html" class="hover:text-cyan-400 transition-colors">About</a>
+                    <!-- Services Dropdown -->
+                    <div class="relative group" id="servicesDropdown">
+                        <button class="hover:text-cyan-400 transition-colors flex items-center space-x-1">
+                            <span>Services</span>
+                            <span class="text-sm">▼</span>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 backdrop-blur-xl bg-white/10 border border-white/20 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <a href="services.html" class="block px-4 py-3 hover:bg-white/10 transition-colors rounded-t-lg">All Services</a>
+                            <a href="service-details.html" class="block px-4 py-3 hover:bg-white/10 transition-colors rounded-b-lg">Service Details</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="hover:text-cyan-400 transition-colors">Blog</a>
+                    <a href="login.html" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">Login</a>
+                    <a href="register.html" class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-lg hover:shadow-cyan-500/50 transition-all">Register</a>
+                    <button id="darkModeToggle" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
+                        <span id="darkModeIcon">🌙</span>
+                    </button>
+                </div>
+                <button class="lg:hidden text-2xl" id="mobileMenuBtn">☰</button>
+            </div>
+            <!-- Mobile & Tablet Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4 border-t border-white/10">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <!-- Mobile Home Dropdown -->
+                    <div class="mobile-dropdown">
+                        <button class="w-full flex items-center justify-between hover:text-cyan-400 transition-colors py-2" onclick="toggleMobileDropdown(this)">
+                            <span>Home</span>
+                            <span class="text-sm">▼</span>
+                        </button>
+                        <div class="hidden mt-2 ml-4 space-y-2 mobile-dropdown-content">
+                            <a href="index.html" class="block py-2 hover:text-cyan-400 transition-colors">Home (Default)</a>
+                            <a href="home2.html" class="block py-2 hover:text-cyan-400 transition-colors">Home – Alternate</a>
+                        </div>
+                    </div>
+                    <a href="features-pricing.html" class="hover:text-cyan-400 transition-colors py-2">Features</a>
+                    <a href="about.html" class="hover:text-cyan-400 transition-colors py-2">About</a>
+                    <!-- Mobile Services Dropdown -->
+                    <div class="mobile-dropdown">
+                        <button class="w-full flex items-center justify-between hover:text-cyan-400 transition-colors py-2" onclick="toggleMobileDropdown(this)">
+                            <span>Services</span>
+                            <span class="text-sm">▼</span>
+                        </button>
+                        <div class="hidden mt-2 ml-4 space-y-2 mobile-dropdown-content">
+                            <a href="services.html" class="block py-2 hover:text-cyan-400 transition-colors">All Services</a>
+                            <a href="service-details.html" class="block py-2 hover:text-cyan-400 transition-colors">Service Details</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="hover:text-cyan-400 transition-colors py-2">Blog</a>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                        <a href="login.html" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-center">Login</a>
+                        <a href="register.html" class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-lg hover:shadow-cyan-500/50 transition-all text-center">Register</a>
+                        <button id="darkModeToggleMobile" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
+                            <span id="darkModeIconMobile">🌙</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Details Hero -->
+    <section class="pt-32 pb-20 px-6 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <a href="services.html" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 mb-8 transition-colors">
+                <span>←</span> <span>Back to Services</span>
+            </a>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="text-6xl mb-6" id="serviceIcon">☁️</div>
+                    <h1 class="text-5xl md:text-6xl font-bold font-['Space_Grotesk'] mb-6" id="serviceTitle">Shared Cloud Hosting</h1>
+                    <p class="text-xl text-gray-300 mb-8" id="serviceDescription">Perfect for small websites and blogs. Affordable and easy to manage with unlimited resources.</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="register.html" class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all">
+                            Get Started
+                        </a>
+                        <button class="px-8 py-4 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl font-semibold hover:bg-white/20 transition-all">
+                            View Pricing
+                        </button>
+                    </div>
+                </div>
+                <div class="backdrop-blur-2xl bg-white/10 rounded-3xl p-8 border border-white/20">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-white/5">
+                            <span class="text-gray-400">Starting Price</span>
+                            <span class="text-2xl font-bold" id="servicePrice">$9/month</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-white/5">
+                            <span class="text-gray-400">Uptime SLA</span>
+                            <span class="text-2xl font-bold text-green-400">99.99%</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 rounded-xl bg-white/5">
+                            <span class="text-gray-400">Support</span>
+                            <span class="text-2xl font-bold text-cyan-400">24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 px-6 bg-slate-800">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-['Space_Grotesk'] mb-12 text-center">Key Features</h2>
+            <div class="grid md:grid-cols-2 gap-6" id="serviceFeatures">
+                <!-- Features will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="py-20 px-6 bg-slate-900">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-4xl font-bold font-['Space_Grotesk'] mb-12 text-center">Specifications</h2>
+            <div class="neo-card p-10 rounded-3xl">
+                <div class="grid md:grid-cols-3 gap-8" id="serviceSpecs">
+                    <!-- Specs will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold font-['Space_Grotesk'] mb-6">Ready to Get Started?</h2>
+            <p class="text-xl mb-8 text-white/90">Start your free trial today. No credit card required.</p>
+            <a href="register.html" class="inline-block px-10 py-4 bg-white text-purple-600 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
+                Start Free Trial
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 sm:py-12 px-4 sm:px-6 border-t border-white/10">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-3 sm:mb-4">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center">
+                            <span class="text-xl sm:text-2xl">☁️</span>
+                        </div>
+                        <span class="text-lg sm:text-xl font-bold font-['Space_Grotesk']">CloudHost Pro</span>
+                    </div>
+                    <p class="text-gray-400 text-xs sm:text-sm">Fast, secure, and scalable cloud hosting solutions for businesses of all sizes.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="features-pricing.html" class="hover:text-cyan-400 transition-colors">Pricing</a></li>
+                        <li><a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a></li>
+                        <li><a href="features-pricing.html#features" class="hover:text-cyan-400 transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-3 sm:mb-4 text-sm sm:text-base">Legal</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
+                    <ul class="space-y-2 text-xs sm:text-sm text-gray-400">
+                        <li>Email: support@cloudhost.pro</li>
+                        <li>Phone: +1 (555) 123-4567</li>
+                        <li>24/7 Live Chat Available</li>
+                    </ul>
+                    <div class="flex gap-3 sm:gap-4 mt-3 sm:mt-4">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-cyan-400 transition-colors group">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current text-white group-hover:text-cyan-400 transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-cyan-400 transition-colors group">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current text-white group-hover:text-cyan-400 transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-cyan-400 transition-colors group">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current text-white group-hover:text-cyan-400 transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-cyan-400 transition-colors group">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current text-white group-hover:text-cyan-400 transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-gray-400">
+                <p>© 2025 CloudHost Pro. All rights reserved.</p>
+                <p class="mt-2 text-xs">Data Centers: New York, London, Tokyo, Sydney, São Paulo, Frankfurt, Singapore, Mumbai, Toronto, Amsterdam, Paris, Seoul, Dubai, Stockholm, Los Angeles</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Mobile dropdown toggle
+        function toggleMobileDropdown(button) {
+            const content = button.nextElementSibling;
+            content.classList.toggle('hidden');
+        }
+        
+        // Service data
+        const services = {
+            shared: {
+                icon: '☁️',
+                title: 'Shared Cloud Hosting',
+                description: 'Perfect for small websites and blogs. Affordable and easy to manage with unlimited resources.',
+                price: '$9/month',
+                features: [
+                    { title: 'Unlimited Bandwidth', desc: 'No limits on data transfer' },
+                    { title: 'Free SSL Certificate', desc: 'Secure your site with free SSL' },
+                    { title: 'cPanel Included', desc: 'Easy-to-use control panel' },
+                    { title: '99.99% Uptime', desc: 'Guaranteed reliability' },
+                    { title: '24/7 Support', desc: 'Round-the-clock assistance' },
+                    { title: 'One-Click Installs', desc: 'Install apps with one click' }
+                ],
+                specs: [
+                    { label: 'CPU Cores', value: '2' },
+                    { label: 'RAM', value: '4GB' },
+                    { label: 'Storage', value: '50GB SSD' },
+                    { label: 'Bandwidth', value: 'Unlimited' },
+                    { label: 'Domains', value: 'Unlimited' },
+                    { label: 'Email Accounts', value: 'Unlimited' }
+                ]
+            },
+            vps: {
+                icon: '🖥️',
+                title: 'VPS Hosting',
+                description: 'Dedicated resources with full root access. Ideal for growing businesses.',
+                price: '$29/month',
+                features: [
+                    { title: 'Full Root Access', desc: 'Complete control over your server' },
+                    { title: 'SSD Storage', desc: 'Fast and reliable storage' },
+                    { title: 'Instant Scaling', desc: 'Scale resources on demand' },
+                    { title: 'Dedicated IP', desc: 'Your own IP address' },
+                    { title: 'OS Choice', desc: 'Choose your operating system' },
+                    { title: 'Backup Included', desc: 'Automated daily backups' }
+                ],
+                specs: [
+                    { label: 'CPU Cores', value: '4' },
+                    { label: 'RAM', value: '8GB' },
+                    { label: 'Storage', value: '200GB SSD' },
+                    { label: 'Bandwidth', value: '5TB' },
+                    { label: 'IP Addresses', value: '1 Dedicated' },
+                    { label: 'Snapshots', value: 'Included' }
+                ]
+            },
+            dedicated: {
+                icon: '🏢',
+                title: 'Dedicated Cloud Servers',
+                description: 'Maximum performance and security for enterprise applications.',
+                price: '$99/month',
+                features: [
+                    { title: 'Dedicated Resources', desc: 'All resources are yours alone' },
+                    { title: 'Custom Configurations', desc: 'Tailored to your needs' },
+                    { title: 'Priority Support', desc: 'Fast-track support queue' },
+                    { title: 'DDoS Protection', desc: 'Advanced security included' },
+                    { title: 'Hardware Monitoring', desc: '24/7 hardware monitoring' },
+                    { title: 'SLA Guarantee', desc: '99.99% uptime SLA' }
+                ],
+                specs: [
+                    { label: 'CPU Cores', value: '8' },
+                    { label: 'RAM', value: '16GB' },
+                    { label: 'Storage', value: '500GB SSD' },
+                    { label: 'Bandwidth', value: 'Unlimited' },
+                    { label: 'IP Addresses', value: '5 Dedicated' },
+                    { label: 'Support Level', value: 'Priority' }
+                ]
+            },
+            managed: {
+                icon: '⚙️',
+                title: 'Managed Hosting',
+                description: 'We handle the technical details so you can focus on your business.',
+                price: '$49/month',
+                features: [
+                    { title: '24/7 Monitoring', desc: 'Constant server monitoring' },
+                    { title: 'Automatic Backups', desc: 'Daily automated backups' },
+                    { title: 'Security Updates', desc: 'Automatic security patches' },
+                    { title: 'Performance Optimization', desc: 'Optimized for speed' },
+                    { title: 'Expert Support', desc: 'Dedicated support team' },
+                    { title: 'Migration Assistance', desc: 'Free migration help' }
+                ],
+                specs: [
+                    { label: 'Management Level', value: 'Full' },
+                    { label: 'Backup Retention', value: '30 Days' },
+                    { label: 'Update Frequency', value: 'Daily' },
+                    { label: 'Response Time', value: '< 1 Hour' },
+                    { label: 'Monitoring', value: '24/7' },
+                    { label: 'Support Channels', value: 'All' }
+                ]
+            },
+            wordpress: {
+                icon: '📝',
+                title: 'WordPress Cloud Hosting',
+                description: 'Optimized specifically for WordPress with one-click installs.',
+                price: '$19/month',
+                features: [
+                    { title: 'Pre-installed WordPress', desc: 'WordPress ready to go' },
+                    { title: 'Auto-updates', desc: 'Automatic WordPress updates' },
+                    { title: 'WP-CLI Access', desc: 'Command-line interface' },
+                    { title: 'Staging Environment', desc: 'Test before going live' },
+                    { title: 'WordPress Optimized', desc: 'Tuned for WordPress' },
+                    { title: 'Plugin Support', desc: 'All plugins supported' }
+                ],
+                specs: [
+                    { label: 'WordPress Version', value: 'Latest' },
+                    { label: 'PHP Version', value: '8.1+' },
+                    { label: 'MySQL', value: 'Included' },
+                    { label: 'Staging Sites', value: '3' },
+                    { label: 'Backup Frequency', value: 'Daily' },
+                    { label: 'CDN', value: 'Included' }
+                ]
+            },
+            developer: {
+                icon: '💻',
+                title: 'Developer Cloud',
+                description: 'API-first infrastructure with CI/CD integrations for developers.',
+                price: '$39/month',
+                features: [
+                    { title: 'RESTful API', desc: 'Full API access' },
+                    { title: 'Git Integration', desc: 'GitHub/GitLab support' },
+                    { title: 'Docker Support', desc: 'Container-ready' },
+                    { title: 'CI/CD Pipelines', desc: 'Automated deployments' },
+                    { title: 'SSH Access', desc: 'Full SSH access' },
+                    { title: 'Multiple Environments', desc: 'Dev, staging, prod' }
+                ],
+                specs: [
+                    { label: 'API Endpoints', value: 'Unlimited' },
+                    { label: 'Git Repos', value: 'Unlimited' },
+                    { label: 'Docker Containers', value: 'Unlimited' },
+                    { label: 'Environments', value: '3' },
+                    { label: 'Deployments', value: 'Unlimited' },
+                    { label: 'Webhooks', value: 'Unlimited' }
+                ]
+            }
+        };
+
+        // Get service from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceKey = urlParams.get('service') || 'shared';
+        const service = services[serviceKey] || services.shared;
+
+        // Populate page
+        document.getElementById('serviceIcon').textContent = service.icon;
+        document.getElementById('serviceTitle').textContent = service.title;
+        document.getElementById('serviceDescription').textContent = service.description;
+        document.getElementById('servicePrice').textContent = service.price;
+
+        // Populate features
+        const featuresContainer = document.getElementById('serviceFeatures');
+        service.features.forEach(feature => {
+            const featureDiv = document.createElement('div');
+            featureDiv.className = 'backdrop-blur-xl bg-white/5 p-6 rounded-2xl border border-white/10';
+            featureDiv.innerHTML = `
+                <h3 class="text-xl font-bold mb-2">${feature.title}</h3>
+                <p class="text-gray-400">${feature.desc}</p>
+            `;
+            featuresContainer.appendChild(featureDiv);
+        });
+
+        // Populate specs
+        const specsContainer = document.getElementById('serviceSpecs');
+        service.specs.forEach(spec => {
+            const specDiv = document.createElement('div');
+            specDiv.className = 'text-center p-4 rounded-xl bg-white/5';
+            specDiv.innerHTML = `
+                <div class="text-gray-400 text-sm mb-2">${spec.label}</div>
+                <div class="text-2xl font-bold text-cyan-400">${spec.value}</div>
+            `;
+            specsContainer.appendChild(specDiv);
+        });
+    </script>
+</body>
+</html>
+
