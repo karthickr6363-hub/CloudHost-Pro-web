@@ -781,6 +781,12 @@ body.light-mode .bg-gradient-to-r.from-cyan-600.via-purple-600.to-pink-600 * {
     color: #ffffff !important;
 }
 
+/* Logout button - keep white text on colored background in light mode */
+body.light-mode aside a[href="index.html"].bg-gradient-to-r,
+body.light-mode aside a[href="index.html"].bg-gradient-to-r * {
+    color: #ffffff !important;
+}
+
 /* Section backgrounds */
 body.light-mode section.bg-slate-900 {
     background: #f8fafc !important;
