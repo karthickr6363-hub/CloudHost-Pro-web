@@ -17,13 +17,13 @@
     <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center">
-                        <span class="text-2xl">☁️</span>
+                <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
+                    <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <img src="images/cloud.svg" alt="Cloud" class="w-6 h-6">
                     </div>
-                    <span class="text-2xl font-bold font-['Space_Grotesk'] bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">CloudHost Pro</span>
+                    <span class="text-lg sm:text-xl xl:text-2xl font-bold font-['Space_Grotesk'] bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent whitespace-nowrap">CloudHost Pro</span>
                 </a>
-                <div class="hidden lg:flex items-center space-x-8">
+                <div class="hidden xl:flex items-center space-x-8">
                     <!-- Home Dropdown -->
                     <div class="relative group" id="homeDropdown">
                         <button class="hover:text-cyan-400 transition-colors flex items-center space-x-1">
@@ -49,6 +49,7 @@
                         </div>
                     </div>
                     <a href="blog.html" class="hover:text-cyan-400 transition-colors">Blog</a>
+                    <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
                     <a href="admin-dashboard.html" class="hover:text-cyan-400 transition-colors">Admin</a>
                     <a href="login.html" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">Login</a>
                     <a href="register.html" class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-lg hover:shadow-cyan-500/50 transition-all">Register</a>
@@ -56,10 +57,12 @@
                         <span id="darkModeIcon">🌙</span>
                     </button>
                 </div>
-                <button class="lg:hidden text-2xl" id="mobileMenuBtn">☰</button>
+                <button class="xl:hidden" id="mobileMenuBtn">
+                    <img src="images/menu.svg" alt="Menu" class="w-6 h-6">
+                </button>
             </div>
             <!-- Mobile & Tablet Menu -->
-            <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4 border-t border-white/10">
+            <div id="mobileMenu" class="hidden xl:hidden mt-4 pb-4 border-t border-white/10">
                 <div class="flex flex-col space-y-4 pt-4">
                     <!-- Mobile Home Dropdown -->
                     <div class="mobile-dropdown">
@@ -86,6 +89,7 @@
                         </div>
                     </div>
                     <a href="blog.html" class="hover:text-cyan-400 transition-colors py-2">Blog</a>
+                    <a href="contact.html" class="hover:text-cyan-400 transition-colors py-2">Contact</a>
                     <a href="admin-dashboard.html" class="hover:text-cyan-400 transition-colors py-2">Admin</a>
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                         <a href="login.html" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-center">Login</a>
@@ -494,7 +498,7 @@
                         <li><a href="features-pricing.html" class="hover:text-cyan-400 transition-colors">Pricing</a></li>
                         <li><a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a></li>
                         <li><a href="features-pricing.html#features" class="hover:text-cyan-400 transition-colors">Features</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Support</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>

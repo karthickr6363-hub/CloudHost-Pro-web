@@ -43,10 +43,10 @@ function removeLightMode() {
 const currentTheme = localStorage.getItem('theme') || 'dark';
 if (currentTheme === 'light') {
     applyLightMode();
-    if (darkModeIcon) darkModeIcon.textContent = '☀️';
+    if (darkModeIcon) darkModeIcon.src = 'images/sun.svg';
 } else {
     removeLightMode();
-    if (darkModeIcon) darkModeIcon.textContent = '🌙';
+    if (darkModeIcon) darkModeIcon.src = 'images/moon.svg';
 }
 
 if (darkModeToggle) {
@@ -55,11 +55,11 @@ if (darkModeToggle) {
         if (isLightMode) {
             removeLightMode();
             localStorage.setItem('theme', 'dark');
-            if (darkModeIcon) darkModeIcon.textContent = '🌙';
+            if (darkModeIcon) darkModeIcon.src = 'images/moon.svg';
         } else {
             applyLightMode();
             localStorage.setItem('theme', 'light');
-            if (darkModeIcon) darkModeIcon.textContent = '☀️';
+            if (darkModeIcon) darkModeIcon.src = 'images/sun.svg';
         }
     });
 }
@@ -142,7 +142,10 @@ const darkModeIconMobile = document.getElementById('darkModeIconMobile');
 if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        mobileMenuBtn.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+        const menuIcon = mobileMenuBtn.querySelector('img');
+        if (menuIcon) {
+            menuIcon.src = mobileMenu.classList.contains('hidden') ? 'images/menu.svg' : 'images/close.svg';
+        }
     });
 }
 
@@ -150,9 +153,9 @@ if (mobileMenuBtn && mobileMenu) {
 if (darkModeToggleMobile && darkModeIconMobile) {
     const currentTheme = localStorage.getItem('theme') || 'dark';
     if (currentTheme === 'light') {
-        darkModeIconMobile.textContent = '☀️';
+        darkModeIconMobile.src = 'images/sun.svg';
     } else {
-        darkModeIconMobile.textContent = '🌙';
+        darkModeIconMobile.src = 'images/moon.svg';
     }
     
     darkModeToggleMobile.addEventListener('click', () => {
@@ -161,13 +164,13 @@ if (darkModeToggleMobile && darkModeIconMobile) {
             if (isLightMode) {
                 removeLightMode();
                 localStorage.setItem('theme', 'dark');
-                darkModeIconMobile.textContent = '🌙';
-                if (darkModeIcon) darkModeIcon.textContent = '🌙';
+                darkModeIconMobile.src = 'images/moon.svg';
+                if (darkModeIcon) darkModeIcon.src = 'images/moon.svg';
             } else {
                 applyLightMode();
                 localStorage.setItem('theme', 'light');
-                darkModeIconMobile.textContent = '☀️';
-                if (darkModeIcon) darkModeIcon.textContent = '☀️';
+                darkModeIconMobile.src = 'images/sun.svg';
+                if (darkModeIcon) darkModeIcon.src = 'images/sun.svg';
             }
         }
     });

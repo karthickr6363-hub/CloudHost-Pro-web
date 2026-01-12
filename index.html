@@ -17,13 +17,13 @@
     <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center">
-                        <span class="text-2xl">☁️</span>
+                <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
+                    <div class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <img src="images/cloud.svg" alt="Cloud" class="w-6 h-6">
                     </div>
-                    <span class="text-2xl font-bold font-['Space_Grotesk'] bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">CloudHost Pro</span>
+                    <span class="text-lg sm:text-xl xl:text-2xl font-bold font-['Space_Grotesk'] bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent whitespace-nowrap">CloudHost Pro</span>
                 </a>
-                <div class="hidden lg:flex items-center space-x-8">
+                <div class="hidden xl:flex items-center space-x-8">
                     <!-- Home Dropdown -->
                     <div class="relative group" id="homeDropdown">
                         <button class="hover:text-cyan-400 transition-colors flex items-center space-x-1">
@@ -49,17 +49,20 @@
                         </div>
                     </div>
                     <a href="blog.html" class="hover:text-cyan-400 transition-colors">Blog</a>
+                    <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
                     <a href="admin-dashboard.html" class="hover:text-cyan-400 transition-colors">Admin</a>
                     <a href="login.html" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">Login</a>
                     <a href="register.html" class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-lg hover:shadow-cyan-500/50 transition-all">Register</a>
                     <button id="darkModeToggle" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
-                        <span id="darkModeIcon">🌙</span>
+                        <img src="images/moon.svg" alt="Dark Mode" id="darkModeIcon" class="w-5 h-5">
                     </button>
                 </div>
-                <button class="lg:hidden text-2xl" id="mobileMenuBtn">☰</button>
+                <button class="xl:hidden" id="mobileMenuBtn">
+                    <img src="images/menu.svg" alt="Menu" class="w-6 h-6">
+                </button>
             </div>
             <!-- Mobile & Tablet Menu -->
-            <div id="mobileMenu" class="hidden lg:hidden mt-4 pb-4 border-t border-white/10">
+            <div id="mobileMenu" class="hidden xl:hidden mt-4 pb-4 border-t border-white/10">
                 <div class="flex flex-col space-y-4 pt-4">
                     <!-- Mobile Home Dropdown -->
                     <div class="mobile-dropdown">
@@ -86,12 +89,13 @@
                         </div>
                     </div>
                     <a href="blog.html" class="hover:text-cyan-400 transition-colors py-2">Blog</a>
+                    <a href="contact.html" class="hover:text-cyan-400 transition-colors py-2">Contact</a>
                     <a href="admin-dashboard.html" class="hover:text-cyan-400 transition-colors py-2">Admin</a>
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                         <a href="login.html" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-center">Login</a>
                         <a href="register.html" class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-lg hover:shadow-cyan-500/50 transition-all text-center">Register</a>
                         <button id="darkModeToggleMobile" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
-                            <span id="darkModeIconMobile">🌙</span>
+                            <img src="images/moon.svg" alt="Dark Mode" id="darkModeIconMobile" class="w-5 h-5">
                         </button>
                     </div>
                 </div>
@@ -106,8 +110,9 @@
         <div class="container mx-auto max-w-7xl relative z-10">
             <div class="hero-grid grid gap-6 md:gap-8 lg:gap-12 items-center">
                 <div class="space-y-6 md:space-y-8">
-                    <div class="block mx-auto text-center px-4 py-2 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 w-fit">
-                        <span class="text-sm font-medium">🚀 Trusted by 50,000+ businesses worldwide</span>
+                    <div class="block mx-auto text-center px-4 py-2 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 w-fit flex items-center gap-2">
+                        <img src="images/rocket.svg" alt="Rocket" class="w-4 h-4">
+                        <span class="text-sm font-medium">Trusted by 50,000+ businesses worldwide</span>
                     </div>
                     <h1 class="text-3xl sm:text-4xl md:text-3xl lg:text-6xl xl:text-7xl font-bold font-['Space_Grotesk'] leading-tight md:leading-normal lg:leading-tight">
                         
@@ -169,32 +174,44 @@
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 <div class="neo-card p-6 sm:p-8 rounded-2xl text-center">
-                    <div class="text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center">⚡</div>
+                    <div class="mb-3 sm:mb-4 flex justify-center">
+                        <img src="images/lightning.svg" alt="Lightning" class="w-12 h-12 sm:w-16 sm:h-16">
+                    </div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Ultra-Fast Speed</h3>
                     <p class="text-sm sm:text-base text-gray-400">SSD storage and optimized servers deliver lightning-fast load times for your applications.</p>
                 </div>
                 <div class="neo-card p-6 sm:p-8 rounded-2xl text-center">
-                    <div class="text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center">🔄</div>
+                    <div class="mb-3 sm:mb-4 flex justify-center">
+                        <img src="images/refresh.svg" alt="Refresh" class="w-12 h-12 sm:w-16 sm:h-16">
+                    </div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">99.99% Uptime Guarantee</h3>
                     <p class="text-sm sm:text-base text-gray-400">Enterprise-grade infrastructure ensures your services stay online around the clock.</p>
                 </div>
                 <div class="neo-card p-6 sm:p-8 rounded-2xl text-center">
-                    <div class="text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center">🔐</div>
+                    <div class="mb-3 sm:mb-4 flex justify-center">
+                        <img src="images/lock.svg" alt="Lock" class="w-12 h-12 sm:w-16 sm:h-16">
+                    </div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Free SSL & CDN</h3>
                     <p class="text-sm sm:text-base text-gray-400">Free SSL certificates and global CDN included with every plan for enhanced security and speed.</p>
                 </div>
                 <div class="neo-card p-6 sm:p-8 rounded-2xl text-center">
-                    <div class="text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center">📈</div>
+                    <div class="mb-3 sm:mb-4 flex justify-center">
+                        <img src="images/chart.svg" alt="Chart" class="w-12 h-12 sm:w-16 sm:h-16">
+                    </div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Scalable Cloud Servers</h3>
                     <p class="text-sm sm:text-base text-gray-400">Scale up or down instantly based on your needs. Pay only for what you use.</p>
                 </div>
                 <div class="neo-card p-6 sm:p-8 rounded-2xl text-center">
-                    <div class="text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center">💬</div>
+                    <div class="mb-3 sm:mb-4 flex justify-center">
+                        <img src="images/speech.svg" alt="Speech" class="w-12 h-12 sm:w-16 sm:h-16">
+                    </div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">24/7 Live Support</h3>
                     <p class="text-sm sm:text-base text-gray-400">Our expert team is available round the clock to assist you with any issues.</p>
                 </div>
                 <div class="neo-card p-6 sm:p-8 rounded-2xl text-center">
-                    <div class="text-3xl sm:text-4xl mb-3 sm:mb-4 flex justify-center">🌍</div>
+                    <div class="mb-3 sm:mb-4 flex justify-center">
+                        <img src="images/globe.svg" alt="Globe" class="w-12 h-12 sm:w-16 sm:h-16">
+                    </div>
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Global Data Centers</h3>
                     <p class="text-sm sm:text-base text-gray-400">Deploy in 15+ locations worldwide for optimal performance and low latency.</p>
                 </div>
@@ -221,8 +238,8 @@
                     <div class="absolute top-0 right-0 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl -mr-36 -mt-36 group-hover:bg-cyan-500/30 transition-colors"></div>
                     <div class="relative z-10">
                         <div class="flex items-start justify-between mb-4 sm:mb-6">
-                            <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center text-2xl sm:text-3xl backdrop-blur-xl">
-                                🚀
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center backdrop-blur-xl">
+                                <img src="images/rocket.svg" alt="Rocket" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                             </div>
                             <div class="px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-xs sm:text-sm font-semibold text-cyan-400">
                                 #1 Choice
@@ -241,8 +258,8 @@
                 <div class="why-card-medium group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-purple-500/40 bg-gradient-to-br from-purple-500/20 via-slate-800 to-slate-900 hover:border-purple-500/70 transition-all transform hover:-translate-y-2">
                     <div class="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl -ml-24 -mb-24"></div>
                     <div class="relative z-10 h-full flex flex-col">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center text-xl sm:text-2xl mb-3 sm:mb-4">
-                            💳
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center mb-3 sm:mb-4">
+                            <img src="images/credit-card.svg" alt="Credit Card" class="w-8 h-8 sm:w-10 sm:h-10">
                         </div>
                         <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Pay-as-you-go Model</h3>
                         <p class="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4 flex-grow">No long-term contracts. Scale your resources and pay only for what you actually use.</p>
@@ -255,8 +272,8 @@
                 <!-- Wide Horizontal Card - Bottom Left -->
                 <div class="why-card-wide group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-pink-500/40 bg-gradient-to-r from-pink-500/20 via-slate-800 to-slate-900 hover:border-pink-500/70 transition-all">
                     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-pink-400 to-red-600 flex items-center justify-center text-2xl sm:text-3xl flex-shrink-0">
-                            🛡️
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-pink-400 to-red-600 flex items-center justify-center flex-shrink-0">
+                            <img src="images/shield.svg" alt="Shield" class="w-10 h-10 sm:w-12 sm:h-12">
                         </div>
                         <div class="flex-grow">
                             <h3 class="text-xl sm:text-2xl font-bold mb-2">DDoS Protection</h3>
@@ -273,8 +290,8 @@
                 <div class="why-card-tall group relative overflow-hidden rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-green-500/40 bg-gradient-to-br from-green-500/20 via-slate-800 to-slate-900 hover:border-green-500/70 transition-all transform hover:translate-x-2">
                     <div class="absolute top-4 right-4 w-32 h-32 bg-green-500/10 rounded-full blur-2xl"></div>
                     <div class="relative z-10 h-full flex flex-col">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-xl sm:text-2xl mb-3 sm:mb-4">
-                            🌱
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center mb-3 sm:mb-4">
+                            <img src="images/plant.svg" alt="Plant" class="w-8 h-8 sm:w-10 sm:h-10">
                         </div>
                         <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Planet-friendly Green Data Centers</h3>
                         <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 flex-grow">100% renewable energy powered data centers. Host with us and reduce your carbon footprint while maintaining top performance.</p>
@@ -421,8 +438,8 @@
                     <div class="relative z-10">
                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-6 sm:mb-8">
                             <div class="flex items-center gap-4 sm:gap-6">
-                                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-3xl sm:text-4xl md:text-5xl backdrop-blur-xl shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                                    ☸️
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center backdrop-blur-xl shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                                    <img src="images/kubernetes.svg" alt="Kubernetes" class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
                                 </div>
                                 <div>
                                     <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">Kubernetes</h3>
@@ -444,8 +461,8 @@
                 <div class="integration-modern-card group relative overflow-hidden rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-blue-500/40 bg-gradient-to-br from-blue-500/15 via-slate-800 to-slate-900 hover:border-blue-500/70 transition-all transform hover:scale-105 hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-400 to-cyan-600 flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
-                            🐳
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-400 to-cyan-600 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
+                            <img src="images/docker.svg" alt="Docker" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                         </div>
                         <h4 class="text-lg sm:text-xl font-bold mb-2">Docker</h4>
                         <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Container platform for building and shipping applications</p>
@@ -460,8 +477,8 @@
                 <div class="integration-modern-card group relative overflow-hidden rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-gray-500/40 bg-gradient-to-br from-gray-500/15 via-slate-800 to-slate-900 hover:border-gray-500/70 transition-all transform hover:scale-105 hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-br from-gray-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-gray-400 to-slate-600 flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
-                            🐙
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-gray-400 to-slate-600 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
+                            <img src="images/github.svg" alt="GitHub" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                         </div>
                         <h4 class="text-lg sm:text-xl font-bold mb-2">GitHub</h4>
                         <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Version control and collaboration platform</p>
@@ -476,8 +493,8 @@
                 <div class="integration-modern-card group relative overflow-hidden rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-orange-500/40 bg-gradient-to-br from-orange-500/15 via-slate-800 to-slate-900 hover:border-orange-500/70 transition-all transform hover:scale-105 hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
-                            🦊
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
+                            <img src="images/gitlab.svg" alt="GitLab" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                         </div>
                         <h4 class="text-lg sm:text-xl font-bold mb-2">GitLab</h4>
                         <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Complete DevOps platform with CI/CD for developers and teams</p>
@@ -492,8 +509,8 @@
                 <div class="integration-modern-card group relative overflow-hidden rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-blue-400/40 bg-gradient-to-br from-blue-400/15 via-slate-800 to-slate-900 hover:border-blue-400/70 transition-all transform hover:scale-105 hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-300 to-blue-600 flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
-                            📝
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-300 to-blue-600 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
+                            <img src="images/wordpress.svg" alt="WordPress" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                         </div>
                         <h4 class="text-lg sm:text-xl font-bold mb-2">WordPress</h4>
                         <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">One-click WordPress installation and management</p>
@@ -508,8 +525,8 @@
                 <div class="integration-modern-card group relative overflow-hidden rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-red-500/40 bg-gradient-to-br from-red-500/15 via-slate-800 to-slate-900 hover:border-red-500/70 transition-all transform hover:scale-105 hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-red-400 to-orange-600 flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
-                            ⚙️
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-red-400 to-orange-600 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
+                            <img src="images/cpanel.svg" alt="cPanel" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                         </div>
                         <h4 class="text-lg sm:text-xl font-bold mb-2">cPanel</h4>
                         <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Web hosting control panel included</p>
@@ -524,8 +541,8 @@
                 <div class="integration-modern-card group relative overflow-hidden rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-orange-400/40 bg-gradient-to-br from-orange-400/15 via-slate-800 to-slate-900 hover:border-orange-400/70 transition-all transform hover:scale-105 hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-orange-300 to-orange-600 flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
-                            ☁️
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-orange-300 to-orange-600 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
+                            <img src="images/cloudflare.svg" alt="Cloudflare" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                         </div>
                         <h4 class="text-lg sm:text-xl font-bold mb-2">Cloudflare</h4>
                         <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">CDN and DDoS protection included</p>
@@ -540,8 +557,8 @@
                 <div class="integration-modern-card group relative overflow-hidden rounded-xl sm:rounded-2xl p-6 sm:p-8 border-2 border-purple-500/40 bg-gradient-to-br from-purple-500/15 via-slate-800 to-slate-900 hover:border-purple-500/70 transition-all transform hover:scale-105 hover:-translate-y-2">
                     <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="relative z-10">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center text-2xl sm:text-3xl mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
-                            🔧
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg sm:rounded-xl bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 mx-auto">
+                            <img src="images/wrench.svg" alt="WHM" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
                         </div>
                         <h4 class="text-lg sm:text-xl font-bold mb-2">WHM</h4>
                         <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Web Host Manager for cPanel resellers </p>
@@ -657,7 +674,7 @@
                 <div>
                     <div class="flex items-center space-x-2 mb-3 sm:mb-4">
                         <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center">
-                            <span class="text-xl sm:text-2xl">☁️</span>
+                            <img src="images/cloud.svg" alt="Cloud" class="w-5 h-5 sm:w-6 sm:h-6">
                         </div>
                         <span class="text-lg sm:text-xl font-bold font-['Space_Grotesk']">CloudHost Pro</span>
                     </div>
@@ -670,7 +687,7 @@
                         <li><a href="features-pricing.html" class="hover:text-cyan-400 transition-colors">Pricing</a></li>
                         <li><a href="services.html" class="hover:text-cyan-400 transition-colors">Services</a></li>
                         <li><a href="features-pricing.html#features" class="hover:text-cyan-400 transition-colors">Features</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Support</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
