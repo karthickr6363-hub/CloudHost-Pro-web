@@ -916,7 +916,7 @@ body.light-mode [class*="border-white"] {
 }
 
 /* Fix H1 heading overlap in tablet view */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     section:first-of-type h1 {
         line-height: 1.4 !important;
         word-spacing: normal;
@@ -965,7 +965,7 @@ body.light-mode [class*="border-white"] {
 }
 
 /* Tablet view alignment fixes for home page */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     /* Hero section alignment */
     section:first-of-type .container {
         padding-left: 1.5rem;
@@ -1288,8 +1288,25 @@ footer h6 {
     text-align: left;
 }
 
-/* Custom breakpoint for hero section grid - stack until 1024px */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Prevent section overlap during scrolling */
+section {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Ensure hero section doesn't bleed into next section */
+section:first-of-type {
+    isolation: isolate;
+}
+
+/* Ensure subsequent sections appear above hero */
+section:not(:first-of-type) {
+    z-index: 20;
+    position: relative;
+}
+
+/* Custom breakpoint for hero section grid - stack until 1050px */
+@media (min-width: 768px) and (max-width: 1049px) {
     .hero-grid {
         grid-template-columns: 1fr !important;
     }
@@ -1300,8 +1317,8 @@ footer h6 {
     }
 }
 
-/* At 1024px and above, use 2 columns */
-@media (min-width: 1024px) {
+/* At 1050px and above, use 2 columns */
+@media (min-width: 1050px) {
     .hero-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1309,27 +1326,6 @@ footer h6 {
     .hero-grid > div:last-child {
         margin-top: 0 !important;
         justify-content: flex-end !important;
-    }
-}
-
-/* Specific fix for 1024px to prevent overlap */
-@media (min-width: 1024px) and (max-width: 1024px) {
-    .hero-grid {
-        gap: 3rem !important;
-        align-items: center;
-    }
-    
-    .hero-grid > div:first-child {
-        padding-right: 1rem;
-    }
-    
-    .hero-grid > div:last-child {
-        padding-left: 1rem;
-    }
-    
-    section:first-of-type h1 {
-        font-size: 2.5rem !important;
-        line-height: 1.3 !important;
     }
 }
 
